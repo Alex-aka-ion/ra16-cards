@@ -1,12 +1,10 @@
 import React from "react";
 
-export default function Card({imgUrl, title, text, url, buttonGoText}) {
+export default function Card({imgUrl, imgAltText, children}) {
     return <div className="card">
-        {imgUrl && <img src={imgUrl} className="card-img-top" alt={title}/>}
+        {imgUrl && <img src={imgUrl} className="card-img-top" alt={imgAltText}/>}
             <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{text}</p>
-                <a href={url} className="btn btn-primary">{buttonGoText}</a>
+                {children}
             </div>
     </div>
 }
